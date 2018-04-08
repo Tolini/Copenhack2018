@@ -12,6 +12,7 @@ public class Movement : MonoBehaviour {
 
     private int moveDir = 0;
     private bool movingHorizontal;
+    private bool movingVertically;
 
     public void Spawn()
     {
@@ -28,6 +29,11 @@ public class Movement : MonoBehaviour {
         if(movingHorizontal)
         {
             transform.Translate(new Vector3(moveDir, 0, 0) * moveSpeed * Time.deltaTime);
+        }
+
+        if (movingVertically)
+        {
+            transform.Translate(new Vector3(0, 0, moveDir) * moveSpeed * Time.deltaTime);
         }
     }
 
@@ -49,10 +55,29 @@ public class Movement : MonoBehaviour {
         }
     }
 
+    public void StartMoveUp()
+    {
+        if (spawned)
+        {
+            moveDir = 1;
+            movingVertically = true;
+        }
+    }
+
+    public void StartMoveDown()
+    {
+        if (spawned)
+        {
+            moveDir = -1;
+            movingVertically = true;
+        }
+    }
+
     public void StopMoving()
     {
         moveDir = 0;
         movingHorizontal = false;
+        movingVertically = false;
     }
 
     public void Jump()
