@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="Wifibox" size="5.000000 3.475215" />
+    <ImageTarget name="Puzzlebox" size="5.000000 3.009615" />
+  </Tracking>
+</QCARConfig>
